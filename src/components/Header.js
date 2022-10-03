@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/Header.css';
 import { useHistory } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
@@ -48,33 +49,37 @@ function Header() {
   });
 
   return (
-    <div>
-      <h1 data-testid="page-title">
-        {title}
-      </h1>
-
-      <input
-        type="image"
-        src={ profileIcon }
-        alt="Profile icon"
-        data-testid="profile-top-btn"
-        onClick={ () => {
-          history.push('/profile');
-        } }
-      />
-
-      {iconSearch && (
+    <>
+      <div className="header-container">
         <input
           type="image"
-          src={ searchIcon }
-          alt="Search icon"
-          data-testid="search-top-btn"
-          onClick={ () => setSearchInput((prevState) => !prevState) }
+          src={ profileIcon }
+          alt="Profile icon"
+          data-testid="profile-top-btn"
+          onClick={ () => {
+            history.push('/profile');
+          } }
         />
-      )}
 
-      {searchInput && <SearchBar />}
-    </div>
+        <h1 className="title" data-testid="page-title">
+          {title}
+        </h1>
+
+        {iconSearch && (
+          <input
+            type="image"
+            src={ searchIcon }
+            alt="Search icon"
+            data-testid="search-top-btn"
+            onClick={ () => setSearchInput((prevState) => !prevState) }
+          />
+        )}
+      </div>
+
+      <div className="SearchBar-container">
+        {searchInput && <SearchBar />}
+      </div>
+    </>
   );
 }
 

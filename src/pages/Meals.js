@@ -7,6 +7,7 @@ import {
   MIN_CATEGORY_LENGTH,
 } from '../utils/globalVariables';
 import { getRecipes, getRecipesFromCategory } from '../utils/recipesFetch';
+import '../styles/meals.css';
 
 function Meals() {
   const { recipes, setRecipes } = useContext(SearchBarContext);
@@ -67,7 +68,7 @@ function Meals() {
           />
         </div>
       </section>
-      <section>
+      <section className="mealsRecipesContainer">
         {
           foodsCategory.length === 0
             ? createMenu(recipes, 'meals')

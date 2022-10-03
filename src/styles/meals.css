@@ -1,0 +1,29 @@
+.mealsCard {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #e2e2e2;
+  color: rgb(41, 41, 41);
+  display: flexbox;
+  height: fit-content;
+  margin: 10px;
+  width: calc(70px * 2);
+  padding: 0 0 1px 0;
+}
+
+.mealsImage {
+  border-radius: 10px 10px 0 0;
+  width: calc(70px * 2);
+}
+
+.recipeButton {
+  border: 0;
+  background-color: white;
+}
+
+.mealsRecipesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+
+}
