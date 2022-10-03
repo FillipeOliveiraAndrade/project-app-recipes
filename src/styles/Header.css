@@ -1,49 +1,68 @@
 .header-container {
+  background: tomato;
   display: flex;
   justify-content: space-around;
-  background-color: red;
   margin-bottom: 10px;
 }
 
 .title {
-  font-size: 25px
+  font-size: 25px;
 }
 
-.ingredients {
-  position: absolute;
+.SearchBar-container {
+  background: tomato;
+  border-radius: 5px 5px 10px 10px;
+  margin-bottom: 10px;
+  margin-left: 11px;
   width: 338px;
+}
+
+.ingredients-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
   height: 88px;
   left: 11px;
   top: 188px;
-  
-  background: #41197F;
-  border-radius: 10px;
+  width: 338px;
 
-  colo
+}
+
+.ingredients {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  margin-top: 14px;
+}
+
+.button {
+  background: #fcc436;
+  border-radius: 5px;
+  height: 25px;
+  margin-left: 73.8px;
+  top: 243px;
+  width: 208.16px;
 }
 
 .search-input {
+  background: white;
+  border: 1px solid #b1b1b1;
+  border-radius: 5px;
   box-sizing: border-box;
-
-  width: 338px;
   height: 40px;
-  margin-left: 11px;
+  margin-right: 11px;
   top: 168px;
-  
-  background: #FFFFFF;
-  border: 1px solid #B1B1B1;
-  border-radius: 5px; 
+  width: 338px;
 }
 
 .search-input::placeholder {
-  width: 151.2px;
-  height: 25px;
-  padding-left: 28.38px;
-
+  color: #797d86;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  height: 25px;
   line-height: 14px;
-  
-  color: #797D86;
+  padding-left: 28.38px;
+  width: 151.2px;
+
 }

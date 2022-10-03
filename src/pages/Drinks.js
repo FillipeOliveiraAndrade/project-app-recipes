@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import '../styles/Drinks.css';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchBarContext from '../context/SearchBarContext';
@@ -50,7 +51,7 @@ function Drinks() {
     <main>
       <Header />
       <section>
-        <div>
+        <div className="categorys-container">
           {drinksCategorys.slice(0, MIN_CATEGORY_LENGTH).map(({ strCategory }) => (
             <input
               type="button"
@@ -60,6 +61,7 @@ function Drinks() {
               onClick={ drinksFromCategory }
               name="categories"
               data-testid={ `${strCategory}-category-filter` }
+              className="buttons"
             />
           ))}
           <input
@@ -67,6 +69,7 @@ function Drinks() {
             data-testid="All-category-filter"
             onClick={ clearFilters }
             value="All"
+            className="buttons"
           />
         </div>
       </section>

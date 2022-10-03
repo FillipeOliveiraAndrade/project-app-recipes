@@ -16,14 +16,34 @@
 }
 
 .recipeButton {
-  border: 0;
   background-color: white;
+  border: 0;
 }
 
 .mealsRecipesContainer {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
   justify-content: center;
+  margin-top: 8px;
 
+}
+
+.catagorys-container {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.buttons {
+  background-color: white;
+  border-radius: 5px;
+  color: #222;
+  height: 25px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.buttons:hover {
+  background-color: #fcc436;
+  color: white;
 }

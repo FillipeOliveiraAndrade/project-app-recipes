@@ -48,7 +48,7 @@ function Meals() {
   return (
     <main>
       <section>
-        <div>
+        <div className="catagorys-container">
           {mealsCategorys.slice(0, MIN_CATEGORY_LENGTH).map(({ strCategory }) => (
             <input
               type="button"
@@ -58,6 +58,7 @@ function Meals() {
               onClick={ foodsFromCategory }
               name="categories"
               data-testid={ `${strCategory}-category-filter` }
+              className="buttons"
             />
           ))}
           <input
@@ -65,6 +66,7 @@ function Meals() {
             data-testid="All-category-filter"
             onClick={ clearFilters }
             value="All"
+            className="buttons"
           />
         </div>
       </section>
