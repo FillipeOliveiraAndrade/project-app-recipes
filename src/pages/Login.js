@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { DRINKS_TOKEN_KEY, MEALS_TOKEN_KEY, USER_KEY } from '../utils/globalVariables';
+import logoLaranja from '../images/Bon APPétit LOGO.png';
 import '../styles/Login.css';
 
 const MIN_PASSWORD_LENGTH = 6;
@@ -38,8 +39,13 @@ function Login() {
       onSubmit={ handleSubmit }
       className="loginForm"
     >
+      <img
+        src={ logoLaranja }
+        alt="logo bon APPetit"
+        width="200px"
+      />
       <section className="loginContainer">
-        <h1 className="titles">Log in</h1>
+        <h1 className="titles">Login</h1>
         <label htmlFor="email-input">
           <input
             type="email"

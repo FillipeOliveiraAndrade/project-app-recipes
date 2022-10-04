@@ -1,20 +1,22 @@
 .header-container {
-  background: tomato;
+  background: rgb(255, 126, 71);
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
 }
 
 .title {
+  color: white;
   font-size: 25px;
 }
 
 .SearchBar-container {
-  background: tomato;
+  background: white;
   border-radius: 5px 5px 10px 10px;
   margin-bottom: 10px;
   margin-left: 11px;
   width: 338px;
+  align-items: center;
 }
 
 .ingredients-container {
@@ -30,39 +32,38 @@
 
 .ingredients {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 12px;
   margin-top: 14px;
-}
-
-.button {
-  background: #fcc436;
-  border-radius: 5px;
-  height: 25px;
-  margin-left: 73.8px;
-  top: 243px;
-  width: 208.16px;
+  color: rgb(63, 63, 63);
+  font-size: 13px;
+  text-align: center;
 }
 
 .search-input {
-  background: white;
-  border: 1px solid #b1b1b1;
-  border-radius: 5px;
+  background: rgb(255, 227, 215);
+  border: 0;
+  border-radius: 50px;
   box-sizing: border-box;
-  height: 40px;
+  height: 30px;
   margin-right: 11px;
   top: 168px;
   width: 338px;
 }
 
 .search-input::placeholder {
-  color: #797d86;
-  font-size: 16px;
-  font-style: normal;
+  color: rgb(255, 126, 71);
+  font-size: 13px;
+  font-style: italic;
   font-weight: 300;
   height: 25px;
   line-height: 14px;
   padding-left: 28.38px;
   width: 151.2px;
+}
 
+.icons {
+  filter: invert();
+  width: 30px;
+  margin: 10px;
 }

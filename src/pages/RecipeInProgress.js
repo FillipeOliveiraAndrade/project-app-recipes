@@ -2,19 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams, useRouteMatch } from 'react-router-dom';
 import { getDrinksDetails, getMealsDetails } from '../utils/fetchRecipesDetails';
 import {
-  DONE_RECIPES_KEY,
-  FAVORITE_RECIPES_KEY,
-  IN_PROGRESS_RECIPES_KEY,
+  DONE_RECIPES_KEY, FAVORITE_RECIPES_KEY, IN_PROGRESS_RECIPES_KEY,
 } from '../utils/globalVariables';
 
 import {
-  setRecipeProgressInStore,
-  getObjectInStore,
-  setRecipesInStore,
+  setRecipeProgressInStore, getObjectInStore, setRecipesInStore,
 } from '../utils/localStorage';
 import shareButtonIcon from '../images/shareIcon.svg';
 import favoriteButtonIconActive from '../images/blackHeartIcon.svg';
 import favoriteButtonIconDisabled from '../images/whiteHeartIcon.svg';
+import '../styles/RecipesDetailsButton.css';
 
 function RecipeInProgress() {
   const [recipeDetails, setRecipeDetails] = useState([]);
@@ -178,58 +175,71 @@ function RecipeInProgress() {
 
         return (
           <div key={ idMeal || idDrink }>
-            <img
-              width="350px"
-              data-testid="recipe-photo"
-              name="recipe-photo"
-              src={ strMealThumb || strDrinkThumb }
-              alt={ strMeal || strDrink }
-            />
-            <h2 data-testid="recipe-title">{ strMeal || strDrink }</h2>
-            <button
-              onClick={ () => favoriteRecipe(recipe) }
-              type="button"
-              name="favorite-btn"
-              src={
-                visibleItem.favorite
-                  ? favoriteButtonIconActive
-                  : favoriteButtonIconDisabled
-              }
-              data-testid="favorite-btn"
-            >
-              {
-                visibleItem.favorite
-                  ? <img src={ favoriteButtonIconActive } alt="favorite recipe" />
-                  : <img src={ favoriteButtonIconDisabled } alt="favorite recipe" />
-              }
-            </button>
-            <button
-              type="button"
-              data-testid="share-btn"
-              name="share-btn"
-              src={ shareButtonIcon }
-              onClick={ () => shareRecipe(idDrink || idMeal) }
-            >
-              {
-                visibleItem.share
-                  ? 'Link copied!'
-                  : (<img src={ shareButtonIcon } alt="share" />)
-              }
-            </button>
-            <h3 data-testid="recipe-category">{ strCategory }</h3>
-            <ul data-testid="instructions">
-              { listToDo }
-            </ul>
-            <h3>Intruções</h3>
-            <p>{ strInstructions }</p>
-            <button
-              disabled={ ingredientsCheckedList()?.length !== ingredients.length }
-              data-testid="finish-recipe-btn"
-              type="button"
-              onClick={ () => redirectToDoneRecipes(recipe) }
-            >
-              Finalizar
-            </button>
+            <div className="RecipeDetailHeader">
+              <img
+                width="350px"
+                data-testid="recipe-photo"
+                name="recipe-photo"
+                src={ strMealThumb || strDrinkThumb }
+                alt={ strMeal || strDrink }
+                className="receipeDetailImage"
+              />
+              <h2
+                data-testid="recipe-title"
+                className="recipeDetailTitle"
+              >
+                { strMeal || strDrink }
+              </h2>
+            </div>
+            <div className="detailsBody">
+              <button
+                onClick={ () => favoriteRecipe(recipe) }
+                type="button"
+                name="favorite-btn"
+                src={
+                  visibleItem.favorite
+                    ? favoriteButtonIconActive
+                    : favoriteButtonIconDisabled
+                }
+                data-testid="favorite-btn"
+              >
+                {
+                  visibleItem.favorite
+                    ? <img src={ favoriteButtonIconActive } alt="favorite recipe" />
+                    : <img src={ favoriteButtonIconDisabled } alt="favorite recipe" />
+                }
+              </button>
+              <button
+                type="button"
+                data-testid="share-btn"
+                name="share-btn"
+                src={ shareButtonIcon }
+                onClick={ () => shareRecipe(idDrink || idMeal) }
+              >
+                {
+                  visibleItem.share
+                    ? 'Link copied!'
+                    : (<img src={ shareButtonIcon } alt="share" />)
+                }
+              </button>
+              <h3 data-testid="recipe-category">{ strCategory }</h3>
+              <ul data-testid="instructions">
+                { listToDo }
+              </ul>
+              <h3>Instruções</h3>
+              <p>{ strInstructions }</p>
+              <div className="button-container ">
+                <button
+                  disabled={ ingredientsCheckedList()?.length !== ingredients.length }
+                  data-testid="finish-recipe-btn"
+                  type="button"
+                  onClick={ () => redirectToDoneRecipes(recipe) }
+                  className="button-start-recipes"
+                >
+                  Finalizar
+                </button>
+              </div>
+            </div>
           </div>
         );
       })}

@@ -27,7 +27,10 @@ function RecipesCards({ thumb, name, index, route, itemId }) {
           alt={ name }
           className="mealsImage"
         />
-        <h3 data-testid={ `${index}-card-name` }>
+        <h3
+          data-testid={ `${index}-card-name` }
+          className="recipeTitle"
+        >
           { name }
         </h3>
       </div>

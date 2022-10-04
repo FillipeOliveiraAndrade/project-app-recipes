@@ -1,10 +1,20 @@
 .footer-container {
-  background-color: tomato;
+  background-color: rgb(255, 126, 71);
   bottom: 0;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 4px;
   position: fixed;
   width: 100%;
 }
 
+.icons {
+  filter: invert();
+  width: 30px;
+  margin: 10px;
+}
+
+.footerLogo {
+  height: 40px;
+}

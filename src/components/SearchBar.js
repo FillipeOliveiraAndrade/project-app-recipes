@@ -52,15 +52,16 @@ function SearchBar() {
             />
           </label>
         </div>
-
-        <button
-          type="button"
-          data-testid="exec-search-btn"
-          onClick={ () => handleSearchButton(filterCategory) }
-          className="button"
-        >
-          Search
-        </button>
+        <div className="buttonContainer">
+          <button
+            type="button"
+            data-testid="exec-search-btn"
+            onClick={ () => handleSearchButton(filterCategory) }
+            className="button"
+          >
+            Search
+          </button>
+        </div>
       </div>
     </form>
   );

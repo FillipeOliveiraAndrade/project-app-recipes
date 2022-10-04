@@ -73,7 +73,7 @@ function Drinks() {
           />
         </div>
       </section>
-      <section>
+      <section className="mealsRecipesContainer">
         {
           drinksCategory.length === 0
             ? createMenu(recipes, 'drinks')

@@ -80,6 +80,7 @@
 }
 
 .recomendations-container {
+  background-color: rgb(232, 232, 232);
   display: flex;
   flex: none;
   height: 300px;
@@ -87,6 +88,7 @@
   overflow-x: auto;
   scroll-behavior: inherit;
   width: 100%;
+  padding-top: 20px;
 }
 
 .recomendation-card {
@@ -95,6 +97,7 @@
   height: 220px;
   margin: 10px;
   width: calc(82px * 2);
+  box-shadow: 2px 2px 4px #898989;
 }
 
 .rec-img {

@@ -55,6 +55,7 @@ function Header() {
           type="image"
           src={ profileIcon }
           alt="Profile icon"
+          className="icons"
           data-testid="profile-top-btn"
           onClick={ () => {
             history.push('/profile');
@@ -72,6 +73,7 @@ function Header() {
             alt="Search icon"
             data-testid="search-top-btn"
             onClick={ () => setSearchInput((prevState) => !prevState) }
+            className="icons"
           />
         )}
       </div>

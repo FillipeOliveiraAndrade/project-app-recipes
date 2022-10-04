@@ -1,21 +1,29 @@
 .titles {
-    color: tomato;
+    color: rgb(255, 126, 71);
+    font-size: 20px;
 }
 
 
 .textInputLogin {
+    background-color:rgb(209, 209, 209, 0.2);
+    border-radius: 5px 5px 0 0;
     border-color: rgb(209, 209, 209);
     border-style: solid;
     box-shadow: 10px;
     border-width: 0 0 1px;
-    color: rgb(97, 97, 97);
+    color: rgb(255, 255, 255);
     font-style: italic;
     height: 20px;
     margin: 5px;
+    padding: 10px;
+}
+
+.textInputLogin::placeholder {
+  color: rgb(175, 175, 175);
 }
 
 .loginButton {
-    background-color: tomato;
+    background-color: rgb(255, 126, 71);
     border: 0;
     border-radius: 10px;
     color: white;
@@ -33,7 +41,6 @@
 .loginContainer {
     align-content: center;
     align-items: center;
-    background-color: white;
     border-radius: 10px;
     height: fit-content;
     justify-content: center;
