@@ -46,7 +46,6 @@ function RecipeInProgress() {
 
   const updateIngredientsChecked = () => {
     const ingredientsInStorage = getObjectInStore(IN_PROGRESS_RECIPES_KEY);
-
     if (url.includes('/meals')) setIngredientsChecked(ingredientsInStorage.meals[id]);
     if (url.includes('/drinks')) setIngredientsChecked(ingredientsInStorage.drinks[id]);
   };
@@ -155,6 +154,7 @@ function RecipeInProgress() {
               }
             >
               <input
+                className="ingredientsCheckbox"
                 type="checkbox"
                 id={ `${recipe[ingredient]}-${index}` }
                 name={ recipe[ingredient] }
