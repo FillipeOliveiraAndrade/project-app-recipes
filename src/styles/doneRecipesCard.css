@@ -1,0 +1,13 @@
+.doneRecipeCard {
+    display: grid;
+}
+
+.doneMealsCard {
+    background-color: green;
+    width: calc(70px * 2);
+}
+
+.doneMealsImage {
+    border-radius: 10px 10px 0 0;
+    width: calc(70px * 2);
+}

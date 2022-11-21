@@ -3,6 +3,7 @@ import RecipesDetailsContext from '../context/RecipesDetailsContext';
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
+import '../styles/favAndShareIcons.css';
 
 function ShareAndFavoriteButton() {
   const { handleShareButtonClick,
@@ -17,8 +18,9 @@ function ShareAndFavoriteButton() {
   }, []);
 
   return (
-    <div>
+    <div className="favShareContainer">
       <input
+        className="fav-share-Icons"
         type="image"
         src={ blackHearth ? blackHeartIcon : whiteHeartIcon }
         alt="Favorite icon"

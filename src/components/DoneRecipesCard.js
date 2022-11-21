@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import shareButtonIcon from '../images/shareIcon.svg';
 import favoriteButtonIconActive from '../images/blackHeartIcon.svg';
+import '../styles/doneRecipesCard.css';
 
 function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
   const [visibleItem, setVisibleItem] = useState({ share: false });
@@ -21,13 +22,18 @@ function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
   };
 
   return (
-    <section>
+    <section className="doneRecipeCard">
       <div>
-        <button type="button" onClick={ () => redirectToDetails(recipe.id, recipe.type) }>
+        <button
+          type="button"
+          className="doneMealsCard"
+          onClick={ () => redirectToDetails(recipe.id, recipe.type) }
+        >
           <img
+            className="doneMealsImage"
             src={ recipe.image }
             alt="Recipe"
-            width="200px"
+            width="100px"
             data-testid={ `${index}-horizontal-image` }
           />
           <span data-testid={ `${index}-horizontal-top-text` }>
@@ -37,10 +43,15 @@ function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
                 : `${recipe.nationality} - ${recipe.category}`
             }
           </span>
-          <span data-testid={ `${index}-horizontal-name` }>
+          <br />
+          <span
+            className="doneRecipeTitle"
+            data-testid={ `${index}-horizontal-name` }
+          >
             { recipe.name }
           </span>
         </button>
+        <br />
         { !showItem && (
           <span>
             Feita em

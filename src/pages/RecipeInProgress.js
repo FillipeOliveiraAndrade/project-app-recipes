@@ -12,6 +12,7 @@ import shareButtonIcon from '../images/shareIcon.svg';
 import favoriteButtonIconActive from '../images/blackHeartIcon.svg';
 import favoriteButtonIconDisabled from '../images/whiteHeartIcon.svg';
 import '../styles/RecipesDetailsButton.css';
+import '../styles/favAndShareIcons.css';
 
 function RecipeInProgress() {
   const [recipeDetails, setRecipeDetails] = useState([]);
@@ -104,12 +105,10 @@ function RecipeInProgress() {
     const year = data.getFullYear();
     return `${day}/${month}/${year}`;
   };
-
   const getTagsFromRecipe = (tags) => {
     if (tags) return tags.split(',');
     return [];
   };
-
   const redirectToDoneRecipes = (recipe) => {
     const doneRecipeObject = {
       id: recipe.idMeal || recipe.idDrink,
@@ -125,7 +124,6 @@ function RecipeInProgress() {
     setRecipesInStore(doneRecipeObject, DONE_RECIPES_KEY);
     history.push('/done-recipes');
   };
-
   const ingredientsCheckedList = () => {
     const ingredientsInStorage = getObjectInStore(IN_PROGRESS_RECIPES_KEY);
 
@@ -193,6 +191,7 @@ function RecipeInProgress() {
             </div>
             <div className="detailsBody">
               <button
+                className="fav-share-Icons"
                 onClick={ () => favoriteRecipe(recipe) }
                 type="button"
                 name="favorite-btn"
@@ -210,6 +209,7 @@ function RecipeInProgress() {
                 }
               </button>
               <button
+                className="fav-share-Icons"
                 type="button"
                 data-testid="share-btn"
                 name="share-btn"
