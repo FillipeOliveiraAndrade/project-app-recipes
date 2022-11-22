@@ -14,7 +14,7 @@ function RecipesFilterByType({ filterRecipes }) {
   };
 
   return (
-    <div>
+    <div className='filterBtns'>
       <button
         onClick={ () => filterRecipesType('All') }
         type="button"

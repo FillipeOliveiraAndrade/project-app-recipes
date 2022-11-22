@@ -29,14 +29,16 @@ function DoneRecipes() {
     <main>
       <Header />
       <RecipesFilterByType filterRecipes={ filterRecipesByType } />
-      {recipesFiltered && recipesFiltered.map((recipe, index) => (
-        <DoneRecipesCard
-          key={ index }
-          showItem={ false }
-          index={ index }
-          recipe={ recipe }
-        />
-      )) }
+      <section className='recipesContainer'>
+        {recipesFiltered && recipesFiltered.map((recipe, index) => (
+          <DoneRecipesCard
+            key={ index }
+            showItem={ false }
+            index={ index }
+            recipe={ recipe }
+          />
+        )) }
+      </section>
     </main>
   );
 }

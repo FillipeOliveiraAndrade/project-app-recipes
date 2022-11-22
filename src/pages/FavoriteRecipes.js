@@ -37,15 +37,17 @@ function FavoriteRecipes() {
     <main>
       <Header />
       <RecipesFilterByType filterRecipes={ filterRecipesByType } />
-      {recipesFiltered && recipesFiltered.map((recipe, index) => (
-        <DoneRecipesCard
-          key={ index }
-          showItem
-          index={ index }
-          recipe={ recipe }
-          unfavoriteRecipe={ unfavoriteRecipe }
-        />
-      )) }
+      <section className='recipesContainer'>
+        {recipesFiltered && recipesFiltered.map((recipe, index) => (
+          <DoneRecipesCard
+            key={ index }
+            showItem
+            index={ index }
+            recipe={ recipe }
+            unfavoriteRecipe={ unfavoriteRecipe }
+          />
+        )) }
+      </section>
     </main>
   );
 }

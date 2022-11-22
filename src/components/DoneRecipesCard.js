@@ -22,8 +22,8 @@ function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
   };
 
   return (
-    <section className="doneRecipeCard">
-      <div>
+    <section className="doneRecipeCardContainer">
+      <div className='doneRecipeCard'>
         <button
           type="button"
           className="doneMealsCard"
@@ -50,30 +50,8 @@ function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
           >
             { recipe.name }
           </span>
-        </button>
-        <br />
-        { !showItem && (
-          <span>
-            Feita em
-            <span data-testid={ `${index}-horizontal-done-date` }>
-              { recipe.doneDate }
-            </span>
-          </span>
-        )}
-        <div>
-          {
-            recipe.tags && recipe.tags
-              .map((tag) => (
-                <span
-                  key={ tag }
-                  data-testid={ `0-${tag}-horizontal-tag` }
-                >
-                  {`${tag} `}
-                </span>
-              ))
-          }
-        </div>
-        <button
+          <button
+          className='shareBtn'
           type="button"
           src={ shareButtonIcon }
           name="share-btn"
@@ -86,8 +64,34 @@ function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
               : (<img src={ shareButtonIcon } alt="share" />)
           }
         </button>
+        </button>
+        <br />
+        <div className='doneRecipeDescription'>
+          { !showItem && (
+            <span>
+              Feita em
+              <span data-testid={ `${index}-horizontal-done-date` }>
+                { ` ${recipe.doneDate}` }
+              </span>
+            </span>
+          )}
+          <div>
+            {
+              recipe.tags && recipe.tags
+                .map((tag) => (
+                  <span
+                    key={ tag }
+                    data-testid={ `0-${tag}-horizontal-tag` }
+                  >
+                    {`${tag} `}
+                  </span>
+                ))
+            }
+          </div>
+        </div>
         { showItem && (
           <button
+            className='favoriteBtn'
             onClick={ () => unfavoriteRecipe(recipe) }
             type="button"
             name="favorite-btn"
@@ -98,7 +102,6 @@ function DoneRecipesCard({ recipe, index, showItem, unfavoriteRecipe }) {
           </button>
         )}
       </div>
-
     </section>
   );
 }

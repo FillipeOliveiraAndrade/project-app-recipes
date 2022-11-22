@@ -1,13 +1,85 @@
-.doneRecipeCard {
-    display: grid;
+.recipesContainer {
+    display: flex;
+    flex-flow: wrap;
+    gap: 15px;
+    justify-content: center;
+    background-color: #efefef;
+    padding: 20px 0;
+}
+
+.doneRecipeCardContainer {
+    display: flex;
+    background: white;
+    width: fit-content;
+    background-color: #efefef;
 }
 
 .doneMealsCard {
-    background-color: green;
-    width: calc(70px * 2);
+    border-radius: 10px 10px 0 0;
+    width: calc(85px * 2);
+    height: fit-content;
+    padding: 0 0 1px 0;
+    background: white;
+    border: none;
+}
+
+.doneRecipeCard {
+    display: flex;
+    border-radius: 10px;
+    align-items: flex-start;
+    background: white;
+    /* border: 1px solid red; */
+    flex-direction: column;
+}
+
+.shareBtn {
+    border: none;
+    border-radius: 100%;
+    background-color: white;
+    width: min-content;
+    align-self: flex-end;
+    flex-wrap: nowrap;
+    margin-left: 5px;
+}
+
+.favoriteBtn {
+    border: none;
+    align-self: center;
+    background-color: #FFFFFF;
 }
 
 .doneMealsImage {
     border-radius: 10px 10px 0 0;
-    width: calc(70px * 2);
+    width: calc(85px * 2);
+}
+
+.doneRecipeTitle {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.doneRecipeDescription {
+    color: rgb(151, 151, 151);
+    padding: 0 5px 5px 5px;
+}
+
+.filterBtns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.filterBtns button {
+    border: 0;
+  border-radius: 0;
+  color: rgb(63, 63, 63);
+  height: 25px;
+  transition: 0.4s;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #FFFFFF;
+}
+
+.filterBtns button:active {
+    font-size: 20px;
 }
