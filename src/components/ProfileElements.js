@@ -24,7 +24,7 @@ function ProfileElements() {
   };
 
   return (
-    <div>
+    <div className='profileContainer'>
       { email !== null && <p data-testid="profile-email">{email.email}</p> }
 
       <button

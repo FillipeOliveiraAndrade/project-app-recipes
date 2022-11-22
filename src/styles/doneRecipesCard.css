@@ -70,7 +70,7 @@
 }
 
 .filterBtns button {
-    border: 0;
+  border: 0;
   border-radius: 0;
   color: rgb(63, 63, 63);
   height: 25px;
@@ -81,5 +81,5 @@
 }
 
 .filterBtns button:active {
-    font-size: 20px;
+  font-size: 20px;
 }
